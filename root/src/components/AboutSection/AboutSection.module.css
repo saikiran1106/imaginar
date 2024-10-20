@@ -1,0 +1,14 @@
+/* src/components/AboutSection/AboutSection.module.css */
+.about {
+    padding: 100px 0;
+    text-align: center;
+    background: linear-gradient(to right, #f7f8ff, #e0e0ff);
+}
+
+.button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    border: 2px solid #333;
+    background: none;
+    cursor: pointer;
+}

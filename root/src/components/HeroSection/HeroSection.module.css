@@ -1,0 +1,24 @@
+/* src/components/HeroSection/HeroSection.module.css */
+.hero {
+    background: linear-gradient(to right, #f0f4ff, #f0f0ff);
+    padding: 100px 0;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    color: #333;
+}
+
+.hero p {
+    font-size: 1.5rem;
+    margin-top: 20px;
+}
+
+.hero button {
+    margin-top: 30px;
+    padding: 10px 20px;
+    border: 2px solid #333;
+    background: none;
+    cursor: pointer;
+}

@@ -1,0 +1,23 @@
+/* src/components/ProductSection/ProductSection.module.css */
+.productSection {
+    text-align: center;
+    padding: 80px 0;
+}
+
+.products {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 40px;
+}
+
+.product {
+    text-align: center;
+}
+
+.imagePlaceholder {
+    width: 200px;
+    height: 200px;
+    background-color: #e0e0e0;
+    margin-bottom: 20px;
+}
+
