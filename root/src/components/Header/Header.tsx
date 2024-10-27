@@ -1,32 +1,52 @@
 // src/components/Header/Header.tsx
+
+import Image from "next/image";
+import Link from "next/link";
 import styles from "./Header.module.css";
 
 const Header = () => {
   return (
     <header className={styles.header}>
-      <div className={styles.logo}>Business Name</div>
-      <nav className={styles.nav}>
-        <ul>
+      <div className={styles.logoContainer}>
+        <Image
+          src="/assets/images/ImaginAR_light_logo.png"
+          alt="Logo"
+          width={125}
+          height={60}
+          className={styles.logo}
+        />
+      </div>
+
+      <nav className={styles.navContainer}>
+        <ul className={styles.navLinks}>
           <li>
-            <a href="#home">Home</a>
+            <Link href="#home">Home</Link>
           </li>
           <li>
-            <a href="#products">Products</a>
+            <Link href="#products">Products</Link>
           </li>
           <li>
-            <a href="#about">About Us</a>
+            <Link href="#about">About Us</Link>
           </li>
           <li>
-            <a href="#team">Team</a>
+            <Link href="#join">Join</Link>
           </li>
           <li>
-            <a href="#join">Join Us</a>
-          </li>
-          <li>
-            <a href="#contact">Contact Us</a>
+            <Link href="#contact">Contact</Link>
           </li>
         </ul>
       </nav>
+
+      <button className={styles.getStarted}>
+        Get Started
+        <Image
+          src="/assets/images/arrow-icon.png"
+          alt="Arrow"
+          width={26}
+          height={26}
+          className={styles.arrowIcon}
+        />
+      </button>
     </header>
   );
 };

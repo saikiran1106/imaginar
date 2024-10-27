@@ -1,24 +1,63 @@
-/* src/components/HeroSection/HeroSection.module.css */
 .hero {
-    background: linear-gradient(to right, #f0f4ff, #f0f0ff);
-    padding: 100px 0;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     text-align: center;
+    height: 100vh;
+    color: #FFF9F4;
+    overflow: hidden;
+    background: transparent;
+    /* Transparent to let video show */
 }
 
-.hero h1 {
-    font-size: 3rem;
-    color: #333;
+.content {
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-.hero p {
-    font-size: 1.5rem;
+.content h1 {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 700;
+    font-size: 4rem;
+    line-height: 1.2;
+    margin: 0;
+   
+}
+
+.content p {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    font-size: 1.75rem;
+    margin-top: 20px;
+    max-width: 700px;
+}
+
+.exploreButton {
+    margin-top: 30px;
+    padding: 12px 24px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: 1.125rem;
+    background-color: #FF7834;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.vrImageContainer {
     margin-top: 20px;
 }
 
-.hero button {
-    margin-top: 30px;
-    padding: 10px 20px;
-    border: 2px solid #333;
-    background: none;
-    cursor: pointer;
+.downArrow {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    border-radius: 50%;
 }

@@ -1,24 +1,63 @@
-/* src/components/Header/Header.module.css */
 .header {
+    position: relative;
     display: flex;
+    align-items: center;
     justify-content: space-between;
-    padding: 20px 40px;
-    background-color: white;
+    padding: 0 20px;
+    height: 80px;
+    z-index: 2;
+    background: transparent;
+    margin-top: 35px;
+    /* Make background transparent */
 }
 
-.logo {
-    font-size: 1.5rem;
-    font-weight: bold;
+.logoContainer {
+    margin-left: 10px;
 }
 
-.nav ul {
+.navContainer {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.navLinks {
     display: flex;
-    list-style: none;
     gap: 20px;
+    padding: 8px 50px;
+    background-color: rgba(44, 44, 44, 0.8);
+    border-radius: 35px;
+    list-style: none;
 }
 
-.nav ul li a {
+.navLinks li a {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: 19px;
+    color: #FFFFFF;
     text-decoration: none;
-    color: #333;
-    font-size: 1rem;
+    transition: color 0.3s;
+}
+
+.navLinks li a:hover {
+    color: #FF7834;
+}
+
+.getStarted {
+    display: flex;
+    align-items: center;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: 19px;
+    padding: 8px 16px;
+    background: rgba(252, 251, 255, 0.9);
+    border-radius: 35px;
+    color: #000000;
+    cursor: pointer;
+    border: none;
+    margin-right: 10px;
+}
+
+.arrowIcon {
+    margin-left: 8px;
 }
