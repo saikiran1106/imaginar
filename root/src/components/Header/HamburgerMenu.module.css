@@ -1,0 +1,81 @@
+/* Wrapper for the menu */
+.hamburgerMenu {
+    position: relative;
+    z-index: 10;
+}
+
+/* Hamburger Icon */
+.hamburger {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 50px;
+    height: 34px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 20;
+}
+
+.hamburger .bar {
+    width: 100%;
+    height: 3px;
+    background-color: white;
+    border-radius: 2px;
+    transition: all 0.3s ease-in-out;
+    
+}
+
+/* Overlay Styles */
+.overlay {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    /* Semi-transparent black */
+    z-index: 15;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.overlay.open {
+    display: flex;
+    /* Show overlay */
+    opacity: 1;
+}
+
+/* Navigation Links */
+.nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+
+.nav ul li {
+    margin: 16px 0;
+}
+
+.nav ul li a {
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.nav ul li a:hover {
+    color: #ff6347;
+    /* Highlight color on hover */
+}
+
+@media (min-width: 1024px) {
+    .hamburgerMenu {
+        display: none;
+    }
+}

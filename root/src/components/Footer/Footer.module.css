@@ -1,16 +1,173 @@
 /* src/components/Footer/Footer.module.css */
+
 .footer {
-    background-color: #f4f4f9;
-    padding: 40px;
-    text-align: center;
+    background-color: #000;
+    /* Black background */
+    color: #fff;
+    /* White text */
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
 }
 
-.footer .contact {
-    margin-bottom: 20px;
+.topSection {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
 }
 
-.footer .social a {
-    margin: 0 10px;
-    text-decoration: none;
-    color: #333;
+.quoteSection {
+    flex: 1;
+}
+
+.quote {
+    font-family: "Poppins", sans-serif;
+    font-size: 28px;
+    font-weight: 400;
+    line-height: 1.5;
+    margin: 0 0 20px;
+}
+
+.getStartedButton {
+    font-family: "Roboto", sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    color: #000;
+    background-color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.getStartedButton:hover {
+    background-color: #ddd;
+}
+
+.imageSection {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.vrImage {
+    max-width: 400px;
+    height: auto;
+}
+
+.middleSection {
+    border-top: 1px solid #333;
+    padding-top: 40px;
+}
+
+.linksContainer {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.linkColumn {
+    flex: 1;
+    min-width: 150px;
+}
+
+.linkTitle {
+    font-family: "Roboto", sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 16px;
+}
+
+.linkList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.linkList li {
+    font-family: "Roboto", sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    margin-bottom: 8px;
+}
+
+.bottomSection {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #333;
+    padding-top: 20px;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.socialMedia {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.socialTitle {
+    font-family: "Roboto", sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.icons {
+    display: flex;
+    gap: 12px;
+}
+
+.icon {
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.ctaButtons {
+    display: flex;
+    gap: 20px;
+}
+
+.signInButton,
+.contactUsButton {
+    font-family: "Roboto", sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    color: #fff;
+    background-color: transparent;
+    border: 1px solid #fff;
+    padding: 10px 20px;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.signInButton:hover,
+.contactUsButton:hover {
+    background-color: #fff;
+    color: #000;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .topSection {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .middleSection .linksContainer {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .bottomSection {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
 }

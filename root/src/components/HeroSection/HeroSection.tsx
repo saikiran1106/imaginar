@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import styles from "./HeroSection.module.css";
+import ScrollRotate from "../3D/ScrollRotate";
 
 const HeroSection = () => {
   return (
@@ -15,7 +16,7 @@ const HeroSection = () => {
           </h1>
         </div>
 
-        <div style={{ textAlign: "center",marginTop: "24px" }}>
+        <div style={{ textAlign: "center", marginTop: "24px" }}>
           <p>Dive into a world where technology meets imagination</p>
         </div>
 
@@ -26,12 +27,14 @@ const HeroSection = () => {
         {/* VR image below the button */}
         <div className={styles.vrImageContainer}>
           <Image
-            src="/assets/images/vr-headset.png"
+            src="/assets/images/file.png"
             alt="VR Headset"
             width={350}
             height={350}
             className={styles.vrImage}
+           
           />
+          {/* <ScrollRotate /> */}
         </div>
 
         {/* Down arrow icon positioned at bottom right */}

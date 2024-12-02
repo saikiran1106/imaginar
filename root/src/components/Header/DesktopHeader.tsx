@@ -3,9 +3,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import styles from "./Header.module.css";
-import HamburgerMenu from "./HamburgerMenu";
 
-const Header = () => {
+const DesktopHeader = () => {
   return (
     <header className={styles.header}>
       <div className={styles.logoContainer}>
@@ -48,11 +47,8 @@ const Header = () => {
           className={styles.arrowIcon}
         />
       </button>
-     
-        <HamburgerMenu />
-
     </header>
   );
 };
 
-export default Header;
+export default DesktopHeader;

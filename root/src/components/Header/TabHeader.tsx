@@ -1,23 +1,19 @@
-// src/components/Header/Header.tsx
-
 import Image from "next/image";
 import Link from "next/link";
 import styles from "./Header.module.css";
-import HamburgerMenu from "./HamburgerMenu";
 
-const Header = () => {
+const TabHeader = () => {
   return (
-    <header className={styles.header}>
+    <header className={`${styles.header} ${styles.tabHeader}`}>
       <div className={styles.logoContainer}>
         <Image
           src="/assets/images/ImaginAR_light_logo.png"
           alt="Logo"
-          width={138}
-          height={54}
+          width={120}
+          height={48}
           className={styles.logo}
         />
       </div>
-
       <nav className={styles.navContainer}>
         <ul className={styles.navLinks}>
           <li>
@@ -29,30 +25,10 @@ const Header = () => {
           <li>
             <Link href="#about">About Us</Link>
           </li>
-          <li>
-            <Link href="#join">Join</Link>
-          </li>
-          <li>
-            <Link href="#contact">Contact</Link>
-          </li>
         </ul>
       </nav>
-
-      <button className={styles.getStarted}>
-        Get Started
-        <Image
-          src="/assets/images/arrow-icon.png"
-          alt="Arrow"
-          width={26}
-          height={26}
-          className={styles.arrowIcon}
-        />
-      </button>
-     
-        <HamburgerMenu />
-
     </header>
   );
 };
 
-export default Header;
+export default TabHeader;

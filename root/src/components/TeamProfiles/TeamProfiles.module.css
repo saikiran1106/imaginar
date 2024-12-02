@@ -1,18 +1,282 @@
-/* src/components/TeamProfiles/TeamProfiles.module.css */
+/* Section Styling */
 .team {
-    padding: 100px 0;
-    text-align: center;
+    padding: 80px 20px;
+    /* Reduced padding for smaller screens */
+    background-color: #000;
+    /* Black background */
+    color: #fff;
+    /* White text */
+    text-align: left;
 }
 
+/* Team Title */
+.teamTitle {
+    font-family: "Poppins", sans-serif;
+    font-size: 32px;
+    /* Smaller size for mobile-first */
+    font-weight: 400;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+    text-underline-position: from-font;
+    text-decoration: underline;
+    text-decoration-skip-ink: none;
+    margin-bottom: 40px;
+    text-align: center;
+    /* Centered title for smaller screens */
+}
+
+/* Profiles Grid */
 .profiles {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    /* Auto-fit columns */
     gap: 20px;
-    margin-top: 40px;
+    /* Smaller gap for compact screens */
+    justify-items: center;
 }
 
-.profile {
-    width: 200px;
-    height: 200px;
-    background-color: #e0e0e0;
+/* Profile Card Styling */
+.profileCard {
+    width: 100%;
+    /* Responsive width for mobile-first */
+    max-width: 285px;
+    /* Fixed size for larger screens */
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #1c1c1c;
+    /* Slightly lighter than black */
+    border-radius: 20px;
+    /* Rounded corners for all screens */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+    /* Subtle shadow */
+    overflow: hidden;
+    text-align: center;
+    padding: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.profileCard:hover {
+    transform: translateY(-10px);
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.7);
+    /* More pronounced shadow on hover */
+}
+
+/* Profile Image Styling */
+.profileImage {
+    width: 100%;
+    height: 236px;
+    object-fit: cover;
+    border-radius: 20px 20px 0 0;
+    /* Rounded top corners only */
+}
+
+/* Name Styling */
+.name {
+    font-family: "Poppins", sans-serif;
+    font-size: 20px;
+    /* Smaller size for mobile */
+    font-weight: 400;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+    color: #ffffff;
+    margin: 20px 0 10px;
+}
+
+/* Role Styling */
+.role {
+    font-family: "Poppins", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+    color: #ff6f00;
+    /* Highlighted orange for the role */
+    margin: 0 0 10px;
+}
+
+/* Subtitle Styling */
+.subtitle {
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #ffffff;
+    opacity: 0.8;
+    /* Slightly faded for subtler emphasis */
+}
+
+/* Responsive Styles */
+
+/* Small Screens (XS, SM: <576px) */
+@media (max-width: 575px) {
+    .team {
+        text-align: center;
+        /* Center align for small screens */
+    }
+
+    .teamTitle {
+        font-size: 24px;
+        /* Smaller title */
+        line-height: 1.4;
+        margin-bottom: 20px;
+    }
+
+    .profiles {
+        grid-template-columns: 1fr;
+        /* Single column layout */
+    }
+
+    .profileCard {
+        max-width: 100%;
+        /* Take full width on small screens */
+        height: auto;
+        /* Adjust height to fit content */
+    }
+
+    .profileImage {
+        height: 200px;
+        /* Smaller image height */
+    }
+
+    .name {
+        font-size: 18px;
+        /* Slightly smaller name */
+    }
+
+    .role {
+        font-size: 14px;
+        /* Smaller role */
+    }
+
+    .subtitle {
+        font-size: 12px;
+        /* Smaller subtitle */
+    }
+}
+
+/* Medium Screens (MD: 576px–767px) */
+@media (min-width: 576px) and (max-width: 767px) {
+    .teamTitle {
+        font-size: 28px;
+        /* Medium-sized title */
+    }
+
+    .profiles {
+        grid-template-columns: repeat(2, 1fr);
+        /* Two columns for medium screens */
+    }
+
+    .profileCard {
+        height: 380px;
+        /* Adjust card height */
+    }
+
+    .profileImage {
+        height: 220px;
+        /* Adjust image height */
+    }
+
+    .name {
+        font-size: 20px;
+        /* Slightly larger name */
+    }
+
+    .role {
+        font-size: 15px;
+    }
+
+    .subtitle {
+        font-size: 13px;
+    }
+}
+
+/* Tablet Screens (LG: 768px–1023px) */
+@media (min-width: 768px) and (max-width: 1023px) {
+    .team {
+        text-align: left;
+        /* Align text to the left */
+    }
+
+    .teamTitle {
+        font-size: 32px;
+        /* Default title size */
+    }
+
+    .profiles {
+        grid-template-columns: repeat(3, 1fr);
+        /* Three columns for tablets */
+        gap: 30px;
+        /* Larger gap for spacing */
+    }
+
+    .profileCard {
+        max-width: 285px;
+        /* Fixed width */
+        height: 400px;
+        /* Default height */
+    }
+
+    .profileImage {
+        height: 236px;
+        /* Default image height */
+    }
+
+    .name {
+        font-size: 22px;
+    }
+
+    .role {
+        font-size: 16px;
+        /* Default role size */
+    }
+
+    .subtitle {
+        font-size: 14px;
+        /* Default subtitle size */
+    }
+}
+
+/* Large Screens (XL: 1024px and above) */
+@media (min-width: 1024px) {
+    .teamTitle {
+        font-size: 40px;
+        /* Larger title */
+        line-height: 1.5;
+    }
+
+    .profiles {
+        grid-template-columns: repeat(4, 1fr);
+        /* Four columns for desktops */
+        gap: 40px;
+        /* More spacing between cards */
+    }
+
+    .profileCard {
+        max-width: 285px;
+        /* Fixed width */
+        height: 400px;
+        /* Default height */
+    }
+
+    .profileImage {
+        height: 236px;
+        /* Default image height */
+    }
+
+    .name {
+        font-size: 24px;
+        /* Larger name size */
+    }
+
+    .role {
+        font-size: 18px;
+        /* Highlighted role */
+    }
+
+    .subtitle {
+        font-size: 16px;
+        /* Subtle emphasis */
+    }
 }
