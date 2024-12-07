@@ -1,19 +1,23 @@
+import Image from 'next/image';
 import styles from "./JoinUs.module.css";
 
 const JoinUs = () => {
   return (
-    <section className={styles.joinUs}>
-      {/* Section Header */}
+    <section id="join" className={styles.joinUs}>
       <h2 className={styles.title}>Join Us</h2>
 
-      {/* Main Content */}
       <div className={styles.content}>
-        {/* Left Icon */}
+        {/* Left Arrow Icon */}
         <div className={styles.leftIcon}>
-          <span className={styles.arrow}>&rarr;</span>
+          <Image
+            src="/assets/images/arrow_left_down.png"
+            alt="Arrow"
+            width={60} // Specify width
+            height={60} // Specify height
+            className={styles.arrow}
+          />
         </div>
 
-        {/* Centered Text */}
         <div className={styles.textContent}>
           <h3 className={styles.subheading}>Become Part of the Future</h3>
           <p className={styles.description}>
@@ -24,19 +28,27 @@ const JoinUs = () => {
           <button className={styles.button}>Join Us</button>
         </div>
 
-        {/* Right Icon (VR Headset) */}
+        {/* VR Headset Icon */}
         <div className={styles.rightIcon}>
-          <img
-            src="https://via.placeholder.com/100" // Replace with actual VR headset image
+          <Image
+            src="/assets/images/VRLarge.png"
             alt="VR Headset"
+            width={250} // Specify width
+            height={250} // Specify height
             className={styles.vrHeadset}
           />
         </div>
       </div>
 
-      {/* Circular Rotating Icon */}
+      {/* Rotating Join Now Icon */}
       <div className={styles.circularIcon}>
-        <span>JOIN US • JOIN US • JOIN US</span>
+        <Image
+          src="/assets/images/Join_Now.png"
+          alt="Join Now"
+          width={120} // Specify width
+          height={120} // Specify height
+          className={styles.rotatingIcon}
+        />
       </div>
     </section>
   );

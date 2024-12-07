@@ -1,249 +1,151 @@
 /* Product Section Container */
 .productSection {
-    text-align: center;
-    padding: 60px 20px;
-    /* Reduced padding for smaller screens */
-    background-color: #121212;
+    padding: 80px 120px;
+    background-color: #000000;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
 }
 
 /* Section Title */
 .sectionTitle {
-    font-family: "Open Sans", sans-serif;
-    font-size: 28px;
-    /* Smaller font size for mobile-first */
-    font-weight: 700;
-    line-height: 1.5;
-    color: #ffffff;
+    color: #FFFFFF;
+    font-size: 32px;
+    font-weight: 600;
     text-align: center;
-    text-underline-position: from-font;
-    text-decoration-skip-ink: none;
-    margin-bottom: 40px;
+    max-width: 800px;
+    margin-bottom: 60px;
+    line-height: 1.4;
 }
 
 /* Products Wrapper */
 .products {
     display: flex;
-    flex-direction: column;
-    /* Stack items vertically for small screens */
-    gap: 30px;
-    margin-top: 20px;
-    align-items: center;
-    /* Center cards for mobile */
+    gap: 24px;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+    max-width: 1400px;
 }
 
 /* Individual Product Card */
 .product {
-    width: 100%;
-    /* Full width on small screens */
-    max-width: 320px;
-    /* Limit width for mobile */
-    padding: 20px;
-    text-align: left;
-    color: #ffffff;
+    flex: 1;
+    min-width: 320px;
+    max-width: 413px;
+    background: #1A1A1A;
+    border-radius: 24px;
+    padding: 24px;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    background-color: #1e1e1e;
-    border-radius: 16px;
-    /* Consistent rounding */
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
-    /* Add subtle shadow */
+    gap: 24px;
 }
 
-/* Placeholder Image */
-.imagePlaceholder {
+.imageWrapper {
     width: 100%;
-    height: 200px;
-    /* Smaller height for mobile */
-    background-color: #e0e0e0;
     border-radius: 16px;
-    margin-bottom: 20px;
-    background-image: url("https://via.placeholder.com/320x200");
-    background-size: cover;
-    background-position: center;
+    overflow: hidden;
+    aspect-ratio: 400/300;
 }
 
-/* Product Title */
+.productImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.productContent {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
 .productTitle {
-    font-family: "Open Sans", sans-serif;
-    font-size: 18px;
-    /* Smaller font size for mobile */
-    font-weight: 700;
-    line-height: 1.5;
-    color: #ffffff;
-    margin-bottom: 10px;
+    color: #FFFFFF;
+    font-size: 20px;
+    font-weight: 500;
+    margin: 0;
 }
 
-/* Product Description */
 .productDescription {
-    font-family: "Open Sans", sans-serif;
-    font-size: 14px;
-    /* Smaller font size for mobile */
-    font-weight: 400;
-    line-height: 1.5;
-    color: #ffffff;
-    margin-bottom: 20px;
-    text-align: center;
-    /* Centered for smaller screens */
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 15px;
+    line-height: 1.6;
+    margin: 0;
+    flex-grow: 1;
 }
 
-/* Read More Button */
 .readMoreButton {
+    width: 71px;
+    height: 42px;
+    border: 1px solid rgb(255, 255, 255);
+    border-radius: 20px;
+    background: transparent;
+    color: #FFFFFF;
+    cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 8px 16px;
-    /* Smaller padding for mobile */
-    gap: 10px;
-    border: 1px solid #ffffff;
-    border-radius: 24px;
-    color: #ffffff;
-    background: transparent;
-    cursor: pointer;
-    font-size: 16px;
-    /* Adjusted font size */
-    transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.readMoreButton:hover {
-    background-color: #ffffff;
-    color: #121212;
+    transition: all 0.3s ease;
+    padding: 0;
+    align-self: flex-start;
 }
 
 .readMoreButton span {
-    font-size: 20px;
-    /* Larger arrow for visual emphasis */
+    font-size: 18px;
+    line-height: 1;
+}
+
+.readMoreButton:hover {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.3);
 }
 
 /* Media Queries */
-
-/* Small Screens (SM: 576px–767px) */
-@media (min-width: 576px) {
+@media (max-width: 1200px) {
     .productSection {
-        padding: 70px 40px;
-        /* Increase padding */
+        padding: 60px 40px;
     }
-
-    .sectionTitle {
-        font-size: 32px;
-        /* Slightly larger title */
-    }
-
+    
     .products {
-        flex-direction: row;
-        /* Switch to row layout */
-        flex-wrap: wrap;
-        /* Allow wrapping for smaller screens */
-        justify-content: center;
-        /* Center cards */
         gap: 20px;
-        /* Reduced gap */
     }
-
+    
     .product {
-        width: calc(50% - 20px);
-        /* Two products per row with gap */
-        max-width: 380px;
-        /* Increase max width */
-    }
-
-    .imagePlaceholder {
-        height: 240px;
-        /* Larger placeholder height */
-    }
-
-    .productTitle {
-        font-size: 20px;
-        /* Larger font size for product titles */
-    }
-
-    .productDescription {
-        font-size: 15px;
-        /* Slightly larger description */
+        min-width: 300px;
+        padding: 20px;
     }
 }
 
-/* Tablet Screens (MD: 768px–1023px) */
-@media (min-width: 768px) {
+@media (max-width: 768px) {
     .productSection {
-        padding: 80px 60px;
-        /* Increase padding */
+        padding: 40px 20px;
     }
-
+    
     .sectionTitle {
-        font-size: 36px;
-        /* Larger title for tablets */
+        font-size: 28px;
+        margin-bottom: 40px;
     }
-
-    .products {
-        gap: 30px;
-        /* Restore default gap */
-    }
-
+    
     .product {
-        width: calc(33.33% - 30px);
-        /* Three products per row */
-        max-width: 400px;
-        /* Increase max width */
+        padding: 16px;
+        gap: 16px;
     }
-
-    .imagePlaceholder {
-        height: 260px;
-        /* Larger height for placeholders */
-    }
-
+    
     .productTitle {
-        font-size: 22px;
-        /* Larger font size for product titles */
+        font-size: 18px;
     }
-
+    
     .productDescription {
-        font-size: 16px;
-        /* Default description size */
+        font-size: 14px;
     }
 }
 
-/* Large Screens (LG: 1024px and above) */
-@media (min-width: 1024px) {
-    .productSection {
-        padding: 100px 80px;
-        /* Generous padding for desktops */
-    }
-
-    .sectionTitle {
-        font-size: 40px;
-        /* Default size for section title */
-    }
-
-    .products {
-        justify-content: space-around;
-        /* Distribute space evenly */
-    }
-
+@media (max-width: 480px) {
     .product {
-        width: 413px;
-        /* Fixed size for desktop */
-    }
-
-    .imagePlaceholder {
-        height: 320px;
-        /* Default height for placeholders */
-    }
-
-    .productTitle {
-        font-size: 24px;
-        /* Larger titles for desktop */
-    }
-
-    .productDescription {
-        font-size: 18px;
-        /* Slightly larger description */
-    }
-
-    .readMoreButton {
-        font-size: 18px;
-        /* Larger button text */
-        padding: 12px 24px;
-        /* Larger padding */
+        min-width: 100%;
     }
 }

@@ -6,11 +6,18 @@
     justify-content: center;
     text-align: center;
     height: 100vh;
-    /* Full viewport height by default */
+    width: 100vw;
+    margin: 0;
+    padding: 0;
     color: #fff9f4;
     overflow: hidden;
-    background: transparent;
-    /* Transparent to let video or background show */
+    background: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    left: 0;
+    right: 0;
 }
 
 /* Content Wrapper */
@@ -19,9 +26,12 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 0 20px ;
-    /* Padding for smaller screens */
-   
+    width: 100%;
+    max-width: 1200px;
+    padding: 0 20px;
+    position: relative;
+    background: transparent;
+    margin: 0 auto;
 }
 
 /* Hero Heading */
@@ -29,9 +39,9 @@
     font-family: "Open Sans", sans-serif;
     font-weight: 700;
     font-size: 3rem;
-    /* Default font size for mobile */
     line-height: 1.2;
     margin: 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 /* Hero Paragraph */
@@ -39,33 +49,38 @@
     font-family: "Open Sans", sans-serif;
     font-weight: 400;
     font-size: 1.25rem;
-    /* Default font size for mobile */
     margin-top: 20px;
     max-width: 700px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
 }
 
 /* Explore Button */
 .exploreButton {
     margin-top: 20px;
-    /* Reduced margin for smaller screens */
     padding: 10px 20px;
-    /* Default button padding for mobile */
     font-family: "Poppins", sans-serif;
     font-weight: 500;
     font-size: 1rem;
-    /* Default font size for button */
-    background-color: #ff7834;
+    background: rgba(255, 120, 52, 0.9);
     color: #ffffff;
-    border: none;
+    border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 16px;
     cursor: pointer;
-    transition: background-color 0.3s;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
-/* VR Image Container */
+.exploreButton:hover {
+    background: rgba(255, 120, 52, 1);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* VR Image Container - No glass effect, completely transparent */
 .vrImageContainer {
     margin-top: 20px;
-    /* Reduced margin for smaller screens */
+    padding: 20px;
+    background: transparent;
 }
 
 /* Down Arrow Icon */
@@ -73,117 +88,119 @@
     position: absolute;
     bottom: 10px;
     right: 10px;
-    /* Adjusted for smaller screens */
-    background-color: rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0);
     padding: 10px;
     border-radius: 50%;
+    border: 1px solid rgb(255, 255, 255);
+    transition: all 0.3s ease;
 }
 
-/* Extra Small Screens (XS: <576px) */
+.downArrow:hover {
+    transform: translateY(-2px);
+}
+
+/* Media Queries */
 @media (max-width: 575px) {
     .hero {
         height: 62vh;
-        /* Reduce height to 90% of viewport for small devices */
+        width: 100vw;
+        margin: 0;
+        padding: 0;
+    }
+    .content {
+        width: 100%;
+        padding: 0 15px;
+        padding-bottom: 205px;
     }
 
     .content h1 {
         font-size: 2rem;
-        /* Smaller heading */
     }
 
     .content p {
         font-size: 1rem;
-        /* Smaller paragraph text */
     }
 
     .exploreButton {
         font-size: 0.875rem;
-        /* Smaller button text */
         padding: 8px 16px;
-        /* Reduce button padding */
     }
 
     .vrImageContainer img {
         width: 250px;
-        /* Smaller VR image */
         height: auto;
     }
 
     .downArrow {
         bottom: 8px;
         right: 8px;
-        /* Adjust positioning */
-    }
-    .content{
-        padding-bottom: 205px;
     }
 }
 
-/* Small Screens (SM: 576px–767px) */
 @media (min-width: 576px) and (max-width: 767px) {
     .hero {
         height: 62vh;
-        /* Slightly taller for small screens */
+        width: 100vw;
+        margin: 0;
+        padding: 0;
+    }
+    .content {
+        width: 100%;
+        padding: 0 20px;
+        padding-bottom: 205px;
     }
 
     .content h1 {
         font-size: 2.5rem;
-        /* Slightly larger heading */
     }
 
     .content p {
         font-size: 1.125rem;
-        /* Adjust paragraph size */
     }
 
     .exploreButton {
         font-size: 1rem;
-        /* Keep button size consistent */
         padding: 10px 20px;
     }
 
     .vrImageContainer img {
         width: 300px;
-        /* Larger VR image */
         height: auto;
     }
 
     .downArrow {
         bottom: 10px;
         right: 10px;
-        /* Adjust positioning */
     }
-           .content {
-               padding-bottom: 205px;
-           }
 }
 
-/* Tablet Screens (MD: 768px–1023px) */
 @media (min-width: 768px) and (max-width: 1023px) {
     .hero {
         height: 95vh;
-        /* Maintain a compact height for tablets */
+        width: 100vw;
+        margin: 0;
+        padding: 0;
+    }
+    .content {
+        width: 100%;
+        padding: 0 30px;
     }
 
     .content h1 {
         font-size: 3.5rem;
-        /* Larger heading for tablets */
     }
 
     .content p {
         font-size: 1.5rem;
-        /* Adjust paragraph size */
     }
 
     .exploreButton {
         font-size: 1.125rem;
         padding: 12px 24px;
-        /* Larger button */
     }
 
     .vrImageContainer img {
-        width: 350px;
-        /* Default VR image size */
+        width: 750px;
         height: auto;
     }
 
@@ -193,39 +210,38 @@
     }
 }
 
-/* Large Screens (LG: 1024px and above) */
 @media (min-width: 1024px) {
     .hero {
         height: 100vh;
-        /* Full viewport height for desktops */
+        width: 100vw;
+        margin: 0;
+        padding: 0;
+    }
+    .content {
+        width: 100%;
+        padding: 0 40px;
     }
 
     .content h1 {
         font-size: 4rem;
-        /* Larger heading for desktops */
     }
 
     .content p {
         font-size: 1.75rem;
-        /* Default paragraph size */
     }
 
     .exploreButton {
         font-size: 1.25rem;
-        /* Larger button text */
         padding: 14px 28px;
-        /* Increase padding for large screens */
     }
 
     .vrImageContainer img {
         width: 400px;
-        /* Larger VR image */
         height: auto;
     }
 
     .downArrow {
         bottom: 20px;
-        /* Default spacing for down arrow */
         right: 20px;
     }
 }

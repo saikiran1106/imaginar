@@ -1,4 +1,5 @@
 import styles from "./TeamProfiles.module.css";
+import Image from 'next/image'
 
 const TeamProfiles = () => {
   // Team data (can be fetched from an API or database)
@@ -32,10 +33,11 @@ const TeamProfiles = () => {
       <div className={styles.profiles}>
         {team.map((member, index) => (
           <div className={styles.profileCard} key={index}>
-            <img
+            <Image 
               src={member.image}
-              alt={`${member.name} Profile`}
-              className={styles.profileImage}
+              alt={member.name}
+              width={500}
+              height={500}
             />
             <h3 className={styles.name}>{member.name}</h3>
             <p className={styles.role}>{member.role}</p>

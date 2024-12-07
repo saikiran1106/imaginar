@@ -1,60 +1,58 @@
 "use client";
 
-import React, { useRef, useEffect, useState } from "react";
-import { Canvas, useFrame } from "@react-three/fiber";
+import React from "react";
+import { Canvas } from "@react-three/fiber";
 import {
-  useGLTF,
-  useAnimations,
   OrbitControls,
   Environment,
 } from "@react-three/drei";
 import * as THREE from "three";
 import { EffectComposer, Bloom } from "@react-three/postprocessing";
 
-const RotatingModel = ({ scrollY }: { scrollY: number }) => {
-  const modelRef = useRef<any>(null); // Reference for the 3D model
-  const targetRotation = useRef(0); // Target rotation for smooth animation
+// const RotatingModel = ({ scrollY }: { scrollY: number }) => {
+//   const modelRef = useRef(null); // Reference for the 3D model
+//   const targetRotation = useRef(0); // Target rotation for smooth animation
 
-  // Load the GLTF model and its animations
-  const { scene, animations } = useGLTF(
-    "https://cdn.glitch.global/91a12243-af41-43e7-8c17-943d2e512736/primary_ion_drive.glb?v=1731770516488"
-  );
-  const { actions } = useAnimations(animations, modelRef);
+//   // Load the GLTF model and its animations
+//   const { scene, animations } = useGLTF(
+//     "https://cdn.glitch.global/91a12243-af41-43e7-8c17-943d2e512736/primary_ion_drive.glb?v=1731770516488"
+//   );
+//   const { actions } = useAnimations(animations, modelRef);
 
-  // Start the "Main" animation once the component mounts
-  useEffect(() => {
-    if (actions && actions["Main"]) {
-      actions["Main"].play(); // Play the "Main" animation
-    }
-  }, [actions]);
+//   // Start the "Main" animation once the component mounts
+//   useEffect(() => {
+//     if (actions && actions["Main"]) {
+//       actions["Main"].play(); // Play the "Main" animation
+//     }
+//   }, [actions]);
 
-  // Smoothly animate the rotation using damping
-  useFrame(() => {
-    if (modelRef.current) {
-      targetRotation.current = scrollY * 0.002; // Adjust speed for smooth rotation
-      modelRef.current.rotation.y = THREE.MathUtils.lerp(
-        modelRef.current.rotation.y,
-        targetRotation.current,
-        0.1 // Damping factor for smoothness
-      );
-    }
-  });
+//   // Smoothly animate the rotation using damping
+//   useFrame(() => {
+//     // if (modelRef.current) {
+//     //   targetRotation.current = scrollY * 0.002; // Adjust speed for smooth rotation
+//     //   modelRef.current.rotation.y = THREE.MathUtils.lerp(
+//     //     modelRef.current.rotation.y,
+//     //     targetRotation.current,
+//     //     0.1 // Damping factor for smoothness
+//     //   );
+//     // }
+//   });
 
-  return <primitive object={scene} ref={modelRef} scale={[1,1,1]} />;
-};
+//   return <primitive object={scene} ref={modelRef} scale={[1,1,1]} />;
+// };
 
 const ScrollRotate = () => {
-  const [scrollY, setScrollY] = useState(0); // Track vertical scroll position
+  // const [scrollY, setScrollY] = useState(0); // Track vertical scroll position
 
-  // Update scroll position on scrolling
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrollY(window.scrollY);
-    };
+  // // Update scroll position on scrolling
+  // useEffect(() => {
+  //   const handleScroll = (event: React.UIEvent<HTMLElement>) => {
+  //     setScrollY(window.scrollY);
+  //   };
 
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll); // Cleanup
-  }, []);
+  //   window.addEventListener("scroll", handleScroll);
+  //   return () => window.removeEventListener("scroll", handleScroll); // Cleanup
+  // }, []);
 
   return (
     <div
@@ -85,7 +83,7 @@ const ScrollRotate = () => {
         </EffectComposer>
 
         {/* Rotating Model */}
-        <RotatingModel scrollY={scrollY} />
+        {/* <RotatingModel scrollY={scrollY} /> */}
 
         {/* OrbitControls for better viewing */}
         <OrbitControls enableZoom={true} />

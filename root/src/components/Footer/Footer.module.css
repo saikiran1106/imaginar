@@ -2,172 +2,222 @@
 
 .footer {
     background-color: #000;
-    /* Black background */
     color: #fff;
-    /* White text */
-    padding: 40px 20px;
+    padding: 64px 80px;
     display: flex;
     flex-direction: column;
-    gap: 40px;
+    gap: 32px;
 }
 
-.topSection {
+.mainContent {
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    gap: 40px;
+    position: relative;
+    padding-bottom: 32px;
 }
 
-.quoteSection {
+.leftSection {
     flex: 1;
+    max-width: 550px;
+    z-index: 2;
 }
 
 .quote {
-    font-family: "Poppins", sans-serif;
-    font-size: 28px;
-    font-weight: 400;
-    line-height: 1.5;
-    margin: 0 0 20px;
+    font-size: 52px;
+    font-weight: 600;
+    line-height: 1.1;
+    margin-bottom: 32px;
+    letter-spacing: -0.5px;
 }
 
 .getStartedButton {
-    font-family: "Roboto", sans-serif;
+    background: transparent;
+    border: 1px solid #fff;
+    color: #fff;
+    padding: 12px 32px;
+    border-radius: 24px;
     font-size: 16px;
-    font-weight: 600;
-    color: #000;
-    background-color: #fff;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 30px;
     cursor: pointer;
     transition: all 0.3s ease;
 }
 
 .getStartedButton:hover {
-    background-color: #ddd;
+    background: #fff;
+    color: #000;
 }
 
-.imageSection {
-    flex: 1;
-    display: flex;
-    justify-content: flex-end;
+.rightSection {
+    position: absolute;
+    right: -40px;
+    top: 100px;
+    width: 70%;
+    height: 140%;
+    z-index: 1;
 }
 
 .vrImage {
-    max-width: 400px;
-    height: auto;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transform: scale(1.2);
 }
 
-.middleSection {
-    border-top: 1px solid #333;
-    padding-top: 40px;
+.linksSection {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 32px;
+    padding-top: 32px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.linksContainer {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 20px;
-}
-
-.linkColumn {
-    flex: 1;
-    min-width: 150px;
-}
-
-.linkTitle {
-    font-family: "Roboto", sans-serif;
-    font-size: 16px;
+.linkColumn h3 {
+    font-size: 18px;
     font-weight: 600;
-    margin-bottom: 16px;
+    margin-bottom: 20px;
+    color: #fff;
 }
 
-.linkList {
+.linkColumn ul {
     list-style: none;
     padding: 0;
     margin: 0;
 }
 
-.linkList li {
-    font-family: "Roboto", sans-serif;
-    font-size: 14px;
-    font-weight: 400;
-    margin-bottom: 8px;
+.linkColumn li {
+    margin-bottom: 12px;
+    color: rgba(255, 255, 255, 0.7);
+    cursor: pointer;
+    transition: color 0.3s ease;
+    font-size: 15px;
+}
+
+.linkColumn li:hover {
+    color: #fff;
 }
 
 .bottomSection {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-top: 1px solid #333;
-    padding-top: 20px;
-    flex-wrap: wrap;
-    gap: 20px;
+    padding-top: 32px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    margin-top: 16px;
 }
 
-.socialMedia {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+.socialLinks p {
+    margin-bottom: 16px;
+    font-size: 15px;
 }
 
-.socialTitle {
-    font-family: "Roboto", sans-serif;
-    font-size: 14px;
-    font-weight: 600;
-}
-
-.icons {
-    display: flex;
-    gap: 12px;
-}
-
-.icon {
-    font-size: 24px;
-    cursor: pointer;
-}
-
-.ctaButtons {
+.socialIcons {
     display: flex;
     gap: 20px;
 }
 
-.signInButton,
-.contactUsButton {
-    font-family: "Roboto", sans-serif;
-    font-size: 16px;
-    font-weight: 600;
+.socialIcons a {
+    color: rgba(255, 255, 255, 0.7);
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.socialIcons a:hover {
     color: #fff;
-    background-color: transparent;
-    border: 1px solid #fff;
-    padding: 10px 20px;
-    border-radius: 30px;
+    transform: translateY(-2px);
+}
+
+.buttons {
+    display: flex;
+    gap: 16px;
+}
+
+.signInButton, .contactButton {
+    padding: 12px 24px;
+    border-radius: 24px;
+    font-size: 15px;
     cursor: pointer;
     transition: all 0.3s ease;
 }
 
-.signInButton:hover,
-.contactUsButton:hover {
-    background-color: #fff;
+.signInButton {
+    background: transparent;
+    border: 1px solid #fff;
+    color: #fff;
+}
+
+.contactButton {
+    background: #fff;
+    border: 1px solid #fff;
     color: #000;
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-    .topSection {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
+@media (max-width: 1200px) {
+    .footer {
+        padding: 48px 40px;
     }
-
-    .middleSection .linksContainer {
-        flex-direction: column;
-        align-items: center;
+    
+    .quote {
+        font-size: 42px;
     }
+    
+    .rightSection {
+        right: -20px;
+    }
+}
 
+@media (max-width: 968px) {
+    .mainContent {
+        flex-direction: column;
+        padding-bottom: 300px;
+    }
+    
+    .leftSection {
+        max-width: 100%;
+    }
+    
+    .rightSection {
+        position: relative;
+        width: 100%;
+        height: 400px;
+        right: 0;
+        top: 0;
+    }
+    
+    .linksSection {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 640px) {
+    .footer {
+        padding: 32px 24px;
+    }
+    
+    .quote {
+        font-size: 32px;
+    }
+    
+    .linksSection {
+        grid-template-columns: 1fr;
+    }
+    
     .bottomSection {
         flex-direction: column;
-        align-items: center;
-        gap: 10px;
+        gap: 32px;
+        text-align: center;
+    }
+    
+    .socialIcons {
+        justify-content: center;
+    }
+    
+    .buttons {
+        flex-direction: column;
+        width: 100%;
+    }
+    
+    .signInButton, .contactButton {
+        width: 100%;
     }
 }

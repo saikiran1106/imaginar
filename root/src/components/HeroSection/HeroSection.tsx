@@ -2,11 +2,11 @@
 
 import Image from "next/image";
 import styles from "./HeroSection.module.css";
-import ScrollRotate from "../3D/ScrollRotate";
+// import { ScrollRotate } from '../3D/ScrollRotate'
 
 const HeroSection = () => {
   return (
-    <section className={styles.hero}>
+    <section id="home" className={styles.hero}>
       <div className={styles.content}>
         <div style={{ textAlign: "center", marginTop: "150px" }}>
           <h1>
@@ -27,12 +27,11 @@ const HeroSection = () => {
         {/* VR image below the button */}
         <div className={styles.vrImageContainer}>
           <Image
-            src="/assets/images/file.png"
+            src="/assets/images/vr-headset.png"
             alt="VR Headset"
             width={350}
             height={350}
             className={styles.vrImage}
-           
           />
           {/* <ScrollRotate /> */}
         </div>
